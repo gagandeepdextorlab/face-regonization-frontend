@@ -50,6 +50,7 @@ export default function Recognize() {
         </div>
       )}
 
+
       <WebcamCapture onCapture={(img) => recognizeFace(img)} />
 
       <div className="mt-4 space-y-2">
