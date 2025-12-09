@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { API_URL } from "./API";
+import { API_URL } from "./API.js";
 import WebcamCapture from "./WebCapture";
 
 export default function Recognize() {
@@ -18,14 +18,20 @@ export default function Recognize() {
 
   return (
     <div>
-      <h2>Recognize Face</h2>
+      <h2 className="text-xl font-semibold mb-3">Recognize Face</h2>
 
       <WebcamCapture onCapture={(img) => recognizeFace(img)} />
 
-      <div>
+      <div className="mt-4 space-y-2">
         {results.map((r, i) => (
-          <p key={i}>
-            {r.name} (distance: {r.distance})
+          <p
+            key={i}
+            className="bg-gray-100 p-3 rounded-lg shadow-sm border"
+          >
+            <span className="font-semibold">{r.name}</span>
+            <span className="text-gray-500">
+              {" "} (distance: {r.distance})
+            </span>
           </p>
         ))}
       </div>
