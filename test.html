@@ -1,0 +1,6 @@
+<video autoplay playsinline muted width="640" height="480"></video>
+<script>
+navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } })
+  .then(stream => document.querySelector('video').srcObject = stream)
+  .catch(console.error);
+</script>
